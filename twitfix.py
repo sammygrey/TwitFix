@@ -60,6 +60,7 @@ else:
 if config['config']['method'] in ('api', 'hybrid'):
     auth = twitter.oauth.OAuth(config['api']['access_token'], config['api']['access_secret'], config['api']['api_key'], config['api']['api_secret'])
     twitter_api = twitter.Twitter(auth=auth)
+    #if auth fails, attempt to scrape
 
 link_cache_system = config['config']['link_cache']
 
